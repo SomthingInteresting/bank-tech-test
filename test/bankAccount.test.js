@@ -55,4 +55,11 @@ describe('BankAccount', () => {
       expect(() => account.withdraw(1500)).toThrow('Withdrawal amount exceeds the balance');
     });
   });
+
+  describe('transactions', () => {
+    test('should have an empty list of transactions when created', () => {
+      const account = new BankAccount();
+      expect(account.transactions).toEqual([]);
+    });
+  });
 });
