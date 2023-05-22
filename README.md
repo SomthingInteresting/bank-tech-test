@@ -61,7 +61,7 @@ Observations:
 - Each column is separated by 2 pipes (||)
 - The first line is a header
 - Shows a running balance
-- credit and debit aren't differentiated by || so debit has || on the left and credit has || on the right
+- credit and debit are differentiated by || so debit has || on the left and credit has || on the right
 
 Questions (Sent to client on 22/05/23 at 12:34pm - responses below):
 
