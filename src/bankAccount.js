@@ -4,6 +4,9 @@ class BankAccount {
   }
 
   deposit(amount) {
+    if (amount < 0 || typeof amount !== 'number') {
+      throw new Error('Invalid deposit amount');
+    }
     this.balance += amount;
   }
 }

@@ -10,4 +10,9 @@ describe('BankAccount', () => {
 
     expect(account.balance).toEqual(1000);
   });
+
+  it('should throw an error if a negative amount is deposited', () => {
+    const account = new BankAccount();
+    expect(() => account.deposit(-1000)).toThrow('Invalid deposit amount');
+  });
 });
