@@ -13,6 +13,13 @@ describe('BankAccount', () => {
 
   it('should throw an error if a negative amount is deposited', () => {
     const account = new BankAccount();
+
     expect(() => account.deposit(-1000)).toThrow('Invalid deposit amount');
+  });
+
+  it('should throw an error if deposit amount is not a number', () => {
+    const account = new BankAccount();
+    
+    expect(() => account.deposit('String')).toThrow('Invalid deposit amount');
   });
 });
