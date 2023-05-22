@@ -174,3 +174,7 @@ TDD red, green, refactor, commit cycle rules:
 - Use appropriate testing framework methods to keep code clean (Additional)
 - Create unit tests for each class and method.
 - Use SRP to keep classes and methods small and testable.
+
+Learning resources:
+
+- [Private methods in JavaScript](https://www.javascripttutorial.net/javascript-private-methods/)
