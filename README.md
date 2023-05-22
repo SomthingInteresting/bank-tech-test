@@ -1,5 +1,32 @@
 # Bank tech test
 
+## Instructions
+
+### To install the app:
+
+- Clone this repo
+- Run `npm install` to install dependencies
+
+### To use the app:
+
+- Run `node` to open the node REPL
+- Create a new bank account with `const account = new BankAccount();`
+- Deposit money with `account.deposit(1000);`
+- Withdraw money with `account.withdraw(500);`
+- Print your statement with `account.printStatement();`
+
+### To run the tests:
+
+- Run `npm test` to run the tests
+
+## Test coverage report
+
+INSERT HERE
+
+## Test screenshots
+
+INSERT HERE
+
 ## Specification
 
 ### Requirements
@@ -34,7 +61,7 @@ Observations:
 - Each column is separated by 2 pipes (||)
 - The first line is a header
 - Shows a running balance
-- credit and debit aren't differentiated by a symbol (no + or -)
+- credit and debit aren't differentiated by || so debit has || on the left and credit has || on the right
 
 Questions (Sent to client on 22/05/23 at 12:34pm - responses below):
 
@@ -111,6 +138,31 @@ The formatting should match the provided criteria.
 Diagram:
 
 ![Bank tech test diagram]()
+
+Input -> Output table:
+
+| Method   | Input | Output / Side Effect |
+| -------- | ----- | -------------------- |
+| deposit  | 1000  | balance becomes 1000 and new transaction added |
+| withdraw | 500   | balance becomes 500 and new transaction added  |
+
+| Property | Value     |
+| -------- | --------- |
+| date     | 10-01-2023 |
+| amount   | 1000      |
+| balance  | 1000      |
+| type     | credit    |
+
+| Method         | Input (BankAccount transactions)                  |
+| -------------- | ------------------------------------------------- |
+| print_statement | [{date: '10-01-2023', amount: 1000, balance: 1000, type: 'credit'}, {date: '14-01-2023', amount: 500, balance: 500, type: 'debit'}] |
+
+Output (console):
+```
+date || credit || debit || balance
+14/01/2023 || || 500.00 || 500.00
+10/01/2023 || 1000.00 || || 1000.00
+```
 
 TDD red, green, refactor, commit cycle rules:
 
