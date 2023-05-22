@@ -37,5 +37,11 @@ describe('BankAccount', () => {
       const invalidWithdrawAmount = -500;
       expect(() => account.withdraw(invalidWithdrawAmount)).toThrow('Invalid amount');
     });
+
+    test('throws an error if withdraw amount is not a number', () => {
+      const account = new BankAccount();
+      const invalidWithdrawAmount = 'String';
+      expect(() => account.withdraw(invalidWithdrawAmount)).toThrow('Invalid amount');
+    });
   });
 });
