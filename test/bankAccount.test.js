@@ -34,19 +34,24 @@ describe('BankAccount', () => {
 
     test('throws an error if a negative amount is withdrawn', () => {
       const account = new BankAccount();
+      const depositAmount = 1000;
+      account.deposit(depositAmount);
       const invalidWithdrawAmount = -500;
       expect(() => account.withdraw(invalidWithdrawAmount)).toThrow('Invalid amount');
     });
 
     test('throws an error if withdraw amount is not a number', () => {
       const account = new BankAccount();
+      const depositAmount = 1000;
+      account.deposit(depositAmount);
       const invalidWithdrawAmount = 'String';
       expect(() => account.withdraw(invalidWithdrawAmount)).toThrow('Invalid amount');
     });
 
     it('should throw an error if withdrawal amount is more than the balance', () => {
       const account = new BankAccount();
-      account.deposit(1000);
+      const depositAmount = 1000;
+      account.deposit(depositAmount);
       expect(() => account.withdraw(1500)).toThrow('Insufficient balance');
     });
   });
