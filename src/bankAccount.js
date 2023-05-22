@@ -4,11 +4,16 @@ class BankAccount {
   }
 
   deposit(amount) {
+    this.#checkInvalidAmount(amount);
+    this.balance += amount;
+  }
+
+  #checkInvalidAmount(amount) {
     if (amount < 0 || typeof amount !== 'number') {
       throw new Error('Invalid deposit amount');
     }
-    this.balance += amount;
   }
 }
+
 
 module.exports = BankAccount;
