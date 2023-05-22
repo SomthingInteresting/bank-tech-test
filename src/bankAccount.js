@@ -14,12 +14,14 @@ class BankAccount {
     }
   }
 
-  withdraw(amount) {
-    this.#checkInvalidAmount(amount);
-    if (this.balance < amount) {
-      throw new Error('Insufficient balance');
+  withdraw(withdrawalAmount) {
+    this.#checkInvalidAmount(withdrawalAmount);
+
+    if (withdrawalAmount > this.balance) {
+      throw new Error('Withdrawal amount exceeds the balance');
     }
-    this.balance -= amount;
+
+    this.balance -= withdrawalAmount;
   }
 }
 

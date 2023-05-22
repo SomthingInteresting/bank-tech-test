@@ -52,7 +52,7 @@ describe('BankAccount', () => {
       const account = new BankAccount();
       const depositAmount = 1000;
       account.deposit(depositAmount);
-      expect(() => account.withdraw(1500)).toThrow('Insufficient balance');
+      expect(() => account.withdraw(1500)).toThrow('Withdrawal amount exceeds the balance');
     });
   });
 });
