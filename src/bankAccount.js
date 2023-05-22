@@ -13,6 +13,10 @@ class BankAccount {
       throw new Error('Invalid deposit amount');
     }
   }
+
+  withdraw(amount) {
+    this.balance -= amount;
+  }
 }
 
 
