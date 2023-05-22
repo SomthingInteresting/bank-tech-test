@@ -3,9 +3,9 @@ class BankAccount {
     this.balance = 0;
   }
 
-  deposit(amount) {
-    this.#checkInvalidAmount(amount);
-    this.balance += amount;
+  deposit(depositAmount) {
+    this.#checkInvalidAmount(depositAmount);
+    this.balance += depositAmount;
   }
 
   #checkInvalidAmount(amount) {
