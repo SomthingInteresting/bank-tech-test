@@ -16,6 +16,9 @@ class BankAccount {
 
   withdraw(amount) {
     this.#checkInvalidAmount(amount);
+    if (this.balance < amount) {
+      throw new Error('Insufficient balance');
+    }
     this.balance -= amount;
   }
 }

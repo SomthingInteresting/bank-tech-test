@@ -43,5 +43,11 @@ describe('BankAccount', () => {
       const invalidWithdrawAmount = 'String';
       expect(() => account.withdraw(invalidWithdrawAmount)).toThrow('Invalid amount');
     });
+
+    it('should throw an error if withdrawal amount is more than the balance', () => {
+      const account = new BankAccount();
+      account.deposit(1000);
+      expect(() => account.withdraw(1500)).toThrow('Insufficient balance');
+    });
   });
 });
