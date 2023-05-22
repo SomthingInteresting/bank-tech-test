@@ -12,13 +12,13 @@ describe('BankAccount', () => {
     test('throws an error if a negative amount is deposited', () => {
       const account = new BankAccount();
       const invalidDepositAmount = -1000;
-      expect(() => account.deposit(invalidDepositAmount)).toThrow('Invalid deposit amount');
+      expect(() => account.deposit(invalidDepositAmount)).toThrow('Invalid amount');
     });
 
     test('throws an error if deposit amount is not a number', () => {
       const account = new BankAccount();
       const invalidDepositAmount = 'String';
-      expect(() => account.deposit(invalidDepositAmount)).toThrow('Invalid deposit amount');
+      expect(() => account.deposit(invalidDepositAmount)).toThrow('Invalid amount');
     });
   });
 
@@ -30,6 +30,12 @@ describe('BankAccount', () => {
       const withdrawAmount = 500;
       account.withdraw(withdrawAmount);
       expect(account.balance).toEqual(depositAmount - withdrawAmount);
+    });
+
+    test('throws an error if a negative amount is withdrawn', () => {
+      const account = new BankAccount();
+      const invalidWithdrawAmount = -500;
+      expect(() => account.withdraw(invalidWithdrawAmount)).toThrow('Invalid amount');
     });
   });
 });
