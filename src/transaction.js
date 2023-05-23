@@ -1,9 +1,13 @@
 class Transaction {
   constructor(amount, type, balance) {
-    this.datetime = new Date().toISOString();
+    this.datetime = this.getCurrentDateTime();
     this.amount = amount;
     this.type = type;
     this.balance = balance;
+  }
+
+  getCurrentDateTime() {
+    return new Date().toISOString();
   }
 }
 
