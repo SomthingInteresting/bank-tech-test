@@ -30,4 +30,11 @@ describe('BankAccount and Statement', () => {
     expect(statementOutput).toEqual(expect.stringContaining(' || || 500.00 || 500.00'));
     expect(statementOutput).toEqual(expect.stringContaining(' || 1000.00 || || 1000.00'));
   });
+
+  test('User cannot withdraw more than account balance', () => {
+    account.deposit(1000);
+    expect(() => {
+      account.withdraw(2000);
+    }).toThrow('Withdrawal amount exceeds the balance');
+  });
 });
