@@ -199,6 +199,7 @@ date || credit || debit || balance
 5. Implement the format method to display the statement.
 6. Format the output of the format method to match the provided format.
 7. Format the timestamp for each transaction to be able to print the date in the statement.
+8. Used ESLint to ensure code is clean and readable.
 
 ## Learning resources:
 
