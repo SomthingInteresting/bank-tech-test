@@ -1,25 +1,27 @@
+// Constants
+const HEADER = 'date || credit || debit || balance';
+
 class Statement {
   constructor(transactions) {
     this.transactions = transactions;
   }
 
   format() {
-    const header = 'date || credit || debit || balance';
     const formattedTransactions = this.transactions
       .slice()
       .sort((a, b) => new Date(b.datetime) - new Date(a.datetime))
-      .map(transaction => this.formatTransaction(transaction))
+      .map(transaction => this.formatTransactionLine(transaction))
       .join('\n');
       
-    return formattedTransactions ? `${header}\n${formattedTransactions}` : header;
+    return formattedTransactions ? `${HEADER}\n${formattedTransactions}` : HEADER;
   }  
 
-  formatTransaction(transaction) {
-    const formattedDate = this.formatDate(transaction.datetime);
-    const formattedAmount = this.formatAmount(transaction.amount);
-    const formattedBalance = this.formatAmount(transaction.balance);
+  formatTransactionLine({ datetime, amount, type, balance }) {
+    const formattedDate = this.formatDate(datetime);
+    const formattedAmount = this.formatAmount(amount);
+    const formattedBalance = this.formatAmount(balance);
 
-    return transaction.type === 'credit'
+    return type === 'credit'
       ? `${formattedDate} || ${formattedAmount} || || ${formattedBalance}`
       : `${formattedDate} || || ${formattedAmount} || ${formattedBalance}`;
   }
