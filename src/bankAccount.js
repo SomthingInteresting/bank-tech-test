@@ -20,11 +20,15 @@ class BankAccount {
   createTransaction(amount, type) {
     const transaction = new Transaction(amount, type, this.balance);
     this.transactions.push(transaction);
+  }
+
+  updateBalance(amount, type) {
+    this.balance += (type === 'credit') ? amount : -amount;
   }  
 
   performTransaction(amount, type) {
     this.#checkInvalidAmount(amount);
-    this.balance += (type === 'credit') ? amount : -amount;
+    this.updateBalance(amount, type);
     this.createTransaction(amount, type);
   }
 
