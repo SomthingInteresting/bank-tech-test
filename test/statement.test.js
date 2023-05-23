@@ -35,5 +35,14 @@ describe('Statement', () => {
       const expectedStatement = 'date || credit || debit || balance';
       expect(statement.format()).toEqual(expectedStatement);
     });
+
+    test('correctly formats a single transaction', () => {
+      const mockTransactions = [new Transaction(1000, 'credit', 1000)];
+      const statement = new Statement(mockTransactions);
+      const expectedStatement = 
+        'date || credit || debit || balance\n' +
+        '10/01/2023 || 1000.00 || || 1000.00';
+      expect(statement.format()).toEqual(expectedStatement);
+    });
   });
 });

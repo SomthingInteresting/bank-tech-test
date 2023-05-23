@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1684841012094" clover="3.2.0">
-  <project timestamp="1684841012094" name="All files">
+<coverage generated="1684841491612" clover="3.2.0">
+  <project timestamp="1684841491612" name="All files">
     <metrics statements="49" coveredstatements="49" conditionals="26" coveredconditionals="26" methods="17" coveredmethods="17" elements="92" coveredelements="92" complexity="0" loc="49" ncloc="49" packages="1" files="3" classes="3"/>
     <file name="bankAccount.js" path="/Users/quddusrahman/Documents/Projects/bank-tech-test/src/bankAccount.js">
       <metrics statements="18" coveredstatements="18" conditionals="12" coveredconditionals="12" methods="6" coveredmethods="6"/>
@@ -25,21 +25,21 @@
     </file>
     <file name="statement.js" path="/Users/quddusrahman/Documents/Projects/bank-tech-test/src/statement.js">
       <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
-      <line num="3" count="2" type="stmt"/>
-      <line num="7" count="2" type="stmt"/>
-      <line num="8" count="2" type="stmt"/>
-      <line num="11" count="2" type="stmt"/>
-      <line num="14" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="18" count="2" type="stmt"/>
-      <line num="19" count="2" type="stmt"/>
-      <line num="20" count="2" type="stmt"/>
-      <line num="22" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="28" count="2" type="stmt"/>
-      <line num="29" count="2" type="stmt"/>
-      <line num="30" count="2" type="stmt"/>
-      <line num="31" count="2" type="stmt"/>
-      <line num="32" count="2" type="stmt"/>
-      <line num="36" count="4" type="stmt"/>
+      <line num="3" count="3" type="stmt"/>
+      <line num="7" count="3" type="stmt"/>
+      <line num="8" count="3" type="stmt"/>
+      <line num="11" count="3" type="stmt"/>
+      <line num="14" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="18" count="3" type="stmt"/>
+      <line num="19" count="3" type="stmt"/>
+      <line num="20" count="3" type="stmt"/>
+      <line num="22" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="28" count="3" type="stmt"/>
+      <line num="29" count="3" type="stmt"/>
+      <line num="30" count="3" type="stmt"/>
+      <line num="31" count="3" type="stmt"/>
+      <line num="32" count="3" type="stmt"/>
+      <line num="36" count="6" type="stmt"/>
       <line num="40" count="1" type="stmt"/>
     </file>
     <file name="transaction.js" path="/Users/quddusrahman/Documents/Projects/bank-tech-test/src/transaction.js">
