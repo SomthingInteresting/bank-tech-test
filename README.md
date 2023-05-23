@@ -10,10 +10,16 @@
 ### To use the app:
 
 - Run `node` to open the node REPL
+- Require the BankAccount class with `const BankAccount = require('./src/BankAccount');`
 - Create a new bank account with `const account = new BankAccount();`
-- Deposit money with `account.deposit(1000);`
-- Withdraw money with `account.withdraw(500);`
-- Print your statement with `account.printStatement();`
+- Deposit money with `account.deposit(1000);` (replace 1000 with the amount you want to deposit)
+- Withdraw money with `account.withdraw(500);` (replace 500 with the amount you want to withdraw)
+
+### To print your statement:
+
+- Require the Statement class with `const Statement = require('./src/statement');`
+- Create a statement with `const statement = new Statement(account.transactions);`
+- Print your statement with `console.log(statement.format());`
 
 ### To run the tests:
 
@@ -21,7 +27,19 @@
 
 ## Test coverage report
 
-INSERT HERE
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------|---------|----------|---------|---------|-------------------
+All files       |     100 |      100 |     100 |     100 |                   
+ bankAccount.js |     100 |      100 |     100 |     100 |                   
+ statement.js   |     100 |      100 |     100 |     100 |                   
+ transaction.js |     100 |      100 |     100 |     100 |                   
+----------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 3 passed, 3 total
+Tests:       21 passed, 21 total
+Snapshots:   0 total
+Time:        0.322 s, estimated 1 s
 
 ## Test screenshots
 
@@ -51,7 +69,7 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 ```
 
-Observations:
+## Observations:
 
 - The statement is printed in reverse chronological order
 - The date is formatted DD/MM/YYYY on the statement
@@ -63,7 +81,7 @@ Observations:
 - Shows a running balance
 - credit and debit are differentiated by || so debit has || on the left and credit has || on the right
 
-Questions (Sent to client on 22/05/23 at 12:34pm - responses below):
+## Questions (Sent to client on 22/05/23 at 12:34pm - responses below):
 
 1. Can the account balance go negative?
 
@@ -101,8 +119,8 @@ Questions (Sent to client on 22/05/23 at 12:34pm - responses below):
 
 - Whichever would reduce the risk of human error. (So default to todays date and time for the transaction.)
 
-User Stories:
-
+## User Stories:
+```
 As a user, I want to deposit money into my account.
 As a user, I want to withdraw money from my account.
 As a user, I want to see my account balance.
@@ -112,36 +130,33 @@ As a user, I want to see the amount of each transaction in my account history.
 As a user, I want to see the balance after each transaction in my account history.
 As a user, I want to see my transactions in reverse chronological order in my account history.
 As a user, I want to view my transactions in a readable format in my account history.
-
-### Approach
-
-The problem:
-Create a simple banking application that allows deposits, withdrawals, and prints account statements. The transactions are stored in memory and can be displayed in reverse chronological order.
-
+```
+## Approach
+```
 Deposits:
 Should accept a valid deposit amount (integer or float up to 2 decimal places). - DONE
 Should update the balance with the deposit amount. - DONE
 Should reject invalid deposit amounts (negative, non-numeric). - DONE
-Should store the transaction with a timestamp. - DONE
+Should store the transaction with a auto generated timestamp. - DONE
 
 Withdrawals:
 Should accept a valid withdrawal amount (integer or float up to 2 decimal places). - DONE
 Should update the balance by deducting the withdrawal amount. - DONE
 Should reject invalid withdrawal amounts (negative, non-numeric, larger than balance). - DONE
-Should store the transaction with a timestamp. - DONE
+Should store the transaction with a auto generated timestamp. - DONE
 
 Account statement:
-Should print all transactions in reverse chronological order.
-Each transaction should include: date, credit or debit, balance after transaction.
-The formatting should match the provided criteria.
-
-Diagram:
+Should print all transactions in reverse chronological order. - DONE
+Each transaction should include: date, credit or debit, balance after transaction. - DONE
+The formatting should match the provided criteria. - DONE
+```
+## Diagram:
 
 ![Bank tech test diagram]()
 
-Input -> Output table:
+## Input -> Output table:
 
-| Method   | Input | Output / Side Effect |
+| Method   | Input | Output               |
 | -------- | ----- | -------------------- |
 | deposit  | 1000  | balance becomes 1000 and new transaction added |
 | withdraw | 500   | balance becomes 500 and new transaction added  |
@@ -155,7 +170,7 @@ Input -> Output table:
 
 | Method         | Input (BankAccount transactions)                  |
 | -------------- | ------------------------------------------------- |
-| print_statement | [{date: '10-01-2023', amount: 1000, balance: 1000, type: 'credit'}, {date: '14-01-2023', amount: 500, balance: 500, type: 'debit'}] |
+| format | [{date: '10-01-2023', amount: 1000, balance: 1000, type: 'credit'}, {date: '14-01-2023', amount: 500, balance: 500, type: 'debit'}] |
 
 Output (console):
 ```
@@ -164,7 +179,7 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 ```
 
-TDD Red, Green, Commit, Refactor, cycle rules:
+## TDD Red, Green, Commit, Refactor, cycle rules followed:
 
 - Create a feature test to test the user stories. (Normal)
 - Use mocks to isolate unit tests. (Normal)
@@ -175,19 +190,16 @@ TDD Red, Green, Commit, Refactor, cycle rules:
 - Create unit tests for each class and method.
 - Use SRP to keep classes and methods small and testable.
 
-Completed so far:
+## Completed:
 
 1. The BankAccount class is interactable via a REPL like Node.
 2. Deposit and withdrawal methods are implemented with necessary validations.
 3. All data (transactions) are being kept in memory.
 4. The error cases have been handled, like trying to withdraw more money than the balance or depositing or withdrawing an invalid amount.
+5. Implement the format method to display the statement.
+6. Format the output of the printStatement method to match the provided format.
+7. Format the timestamp for each transaction to be able to print the date in the statement.
 
-To do:
-
-1. Implement the printStatement method to display the statement.
-2. Format the output of the printStatement method to match the provided format.
-3. Format the timestamp for each transaction to be able to print the date in the statement.
-
-Learning resources:
+## Learning resources:
 
 - [Private methods in JavaScript](https://www.javascripttutorial.net/javascript-private-methods/)
