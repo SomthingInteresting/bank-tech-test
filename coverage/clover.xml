@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1684849841096" clover="3.2.0">
-  <project timestamp="1684849841096" name="All files">
+<coverage generated="1684850478158" clover="3.2.0">
+  <project timestamp="1684850478158" name="All files">
     <metrics statements="50" coveredstatements="50" conditionals="26" coveredconditionals="26" methods="18" coveredmethods="18" elements="94" coveredelements="94" complexity="0" loc="50" ncloc="50" packages="1" files="3" classes="3"/>
     <file name="bankAccount.js" path="/Users/quddusrahman/Documents/Projects/bank-tech-test/src/bankAccount.js">
       <metrics statements="18" coveredstatements="18" conditionals="12" coveredconditionals="12" methods="6" coveredmethods="6"/>
@@ -28,7 +28,7 @@
       <line num="3" count="5" type="stmt"/>
       <line num="7" count="5" type="stmt"/>
       <line num="8" count="5" type="stmt"/>
-      <line num="10" count="7" type="stmt"/>
+      <line num="10" count="5" type="stmt"/>
       <line num="11" count="9" type="stmt"/>
       <line num="14" count="5" type="cond" truecount="2" falsecount="0"/>
       <line num="18" count="9" type="stmt"/>

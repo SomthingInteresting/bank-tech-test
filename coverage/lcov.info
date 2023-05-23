@@ -62,7 +62,7 @@ FNF:7
 FNH:7
 FNDA:5,(anonymous_0)
 FNDA:5,(anonymous_1)
-FNDA:7,(anonymous_2)
+FNDA:5,(anonymous_2)
 FNDA:9,(anonymous_3)
 FNDA:9,(anonymous_4)
 FNDA:9,(anonymous_5)
@@ -70,7 +70,7 @@ FNDA:18,(anonymous_6)
 DA:3,5
 DA:7,5
 DA:8,5
-DA:10,7
+DA:10,5
 DA:11,9
 DA:14,5
 DA:18,9
