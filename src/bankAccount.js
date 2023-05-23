@@ -1,3 +1,5 @@
+const Transaction = require('./transaction');
+
 class BankAccount {
   constructor() {
     this.balance = 0;
@@ -7,6 +9,9 @@ class BankAccount {
   deposit(depositAmount) {
     this.#checkInvalidAmount(depositAmount);
     this.balance += depositAmount;
+
+    const transaction = new Transaction(depositAmount, 'credit', this.balance);
+    this.transactions.push(transaction);
   }
 
   #checkInvalidAmount(amount) {

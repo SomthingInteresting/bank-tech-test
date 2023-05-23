@@ -1,4 +1,7 @@
 const BankAccount = require('../src/bankAccount');
+const Transaction = require('../src/transaction');
+
+jest.mock('../src/transaction');
 
 describe('BankAccount', () => {
   describe('deposit', () => {
@@ -19,6 +22,16 @@ describe('BankAccount', () => {
       const account = new BankAccount();
       const invalidDepositAmount = 'String';
       expect(() => account.deposit(invalidDepositAmount)).toThrow('Invalid amount');
+    });
+
+    test('should add a new transaction to transactions array', () => {
+      const bankAccount = new BankAccount();
+      const mockTransaction = new Transaction();
+      Transaction.mockReturnValue(mockTransaction); 
+      bankAccount.deposit(500);
+
+      expect(bankAccount.transactions.length).toEqual(1);
+      expect(bankAccount.transactions[0]).toBe(mockTransaction);
     });
   });
 
