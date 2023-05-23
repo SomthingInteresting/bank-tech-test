@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1684838254357" clover="3.2.0">
-  <project timestamp="1684838254358" name="All files">
+<coverage generated="1684838320498" clover="3.2.0">
+  <project timestamp="1684838320498" name="All files">
     <metrics statements="33" coveredstatements="33" conditionals="22" coveredconditionals="22" methods="11" coveredmethods="11" elements="66" coveredelements="66" complexity="0" loc="33" ncloc="33" packages="1" files="2" classes="2"/>
     <file name="bankAccount.js" path="/Users/quddusrahman/Documents/Projects/bank-tech-test/src/bankAccount.js">
       <metrics statements="18" coveredstatements="18" conditionals="12" coveredconditionals="12" methods="6" coveredmethods="6"/>
       <line num="1" count="1" type="stmt"/>
-      <line num="5" count="11" type="stmt"/>
-      <line num="6" count="11" type="stmt"/>
-      <line num="10" count="10" type="stmt"/>
-      <line num="14" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="5" count="12" type="stmt"/>
+      <line num="6" count="12" type="stmt"/>
+      <line num="10" count="11" type="stmt"/>
+      <line num="14" count="6" type="cond" truecount="2" falsecount="0"/>
       <line num="15" count="1" type="stmt"/>
-      <line num="17" count="4" type="stmt"/>
-      <line num="21" count="9" type="stmt"/>
-      <line num="22" count="9" type="stmt"/>
-      <line num="26" count="9" type="cond" truecount="2" falsecount="0"/>
-      <line num="30" count="14" type="stmt"/>
-      <line num="31" count="9" type="stmt"/>
-      <line num="32" count="9" type="stmt"/>
-      <line num="36" count="14" type="cond" truecount="4" falsecount="0"/>
+      <line num="17" count="5" type="stmt"/>
+      <line num="21" count="10" type="stmt"/>
+      <line num="22" count="10" type="stmt"/>
+      <line num="26" count="10" type="cond" truecount="2" falsecount="0"/>
+      <line num="30" count="16" type="stmt"/>
+      <line num="31" count="10" type="stmt"/>
+      <line num="32" count="10" type="stmt"/>
+      <line num="36" count="16" type="cond" truecount="4" falsecount="0"/>
       <line num="37" count="4" type="stmt"/>
-      <line num="39" count="10" type="cond" truecount="4" falsecount="0"/>
-      <line num="40" count="1" type="stmt"/>
+      <line num="39" count="12" type="cond" truecount="4" falsecount="0"/>
+      <line num="40" count="2" type="stmt"/>
       <line num="45" count="1" type="stmt"/>
     </file>
     <file name="transaction.js" path="/Users/quddusrahman/Documents/Projects/bank-tech-test/src/transaction.js">
