@@ -6,31 +6,29 @@ class BankAccount {
     this.transactions = [];
   }
 
-  deposit(depositAmount) {
-    this.#checkInvalidAmount(depositAmount);
-    this.balance += depositAmount;
+  deposit(amount) {
+    this.performTransaction(amount, 'credit');
+  }
 
-    const transaction = new Transaction(depositAmount, 'credit', this.balance);
+  withdraw(amount) {
+    if (amount > this.balance) {
+      throw new Error('Withdrawal amount exceeds the balance');
+    }
+    this.performTransaction(amount, 'debit');
+  }
+
+  performTransaction(amount, type) {
+    this.#checkInvalidAmount(amount);
+    this.balance += (type === 'credit') ? amount : -amount;
+
+    const transaction = new Transaction(amount, type, this.balance);
     this.transactions.push(transaction);
   }
 
   #checkInvalidAmount(amount) {
-    if (amount < 0 || typeof amount !== 'number') {
+    if (amount <= 0 || typeof amount !== 'number') {
       throw new Error('Invalid amount');
     }
-  }
-
-  withdraw(withdrawalAmount) {
-    this.#checkInvalidAmount(withdrawalAmount);
-
-    if (withdrawalAmount > this.balance) {
-      throw new Error('Withdrawal amount exceeds the balance');
-    }
-
-    this.balance -= withdrawalAmount;
-
-    const transaction = new Transaction(withdrawalAmount, 'debit', this.balance);
-    this.transactions.push(transaction);
   }
 }
 
