@@ -37,4 +37,16 @@ describe('BankAccount and Statement', () => {
       account.withdraw(2000);
     }).toThrow('Withdrawal amount exceeds the balance');
   });
+
+  test('User cannot deposit or withdraw an invalid amount', () => {
+    expect(() => {
+      account.deposit(-1000);
+    }).toThrow('Invalid amount');
+
+    account.deposit(1000);
+
+    expect(() => {
+      account.withdraw(-500);
+    }).toThrow('Invalid amount');
+  });
 });
