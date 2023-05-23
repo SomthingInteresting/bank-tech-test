@@ -7,7 +7,7 @@ class Statement {
     const header = 'date || credit || debit || balance';
     const formattedTransactions = this.transactions
       .slice()
-      .reverse()
+      .sort((a, b) => new Date(b.datetime) - new Date(a.datetime))
       .map(transaction => this.formatTransaction(transaction))
       .join('\n');
       
