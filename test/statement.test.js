@@ -1,29 +1,32 @@
 const Statement = require('../src/statement');
 const Transaction = require('../src/transaction');
 
-jest.mock('../src/transaction');
+jest.mock('../src/transaction', () => {
+  return jest.fn().mockImplementation((amount, type, balance) => {
+    return {
+      datetime: new Date('2023-01-10').toISOString(),
+      amount: amount,
+      type: type,
+      balance: balance,
+    };
+  });
+});
 
 describe('Statement', () => {
   describe('format', () => {
-    test('formats a single transaction into a string', () => {
-      const transaction = {
-        datetime: new Date('2023-01-10T00:00:00Z'),
-        amount: 1000,
-        type: 'credit',
-        balance: 1000
-      };
+    it('formats the transactions for the statement', () => {
+      const mockTransactions = [
+        new Transaction(1000, 'credit', 1000),
+        new Transaction(500, 'debit', 500)
+      ];
 
-      Transaction.mockImplementation(() => transaction);
-      
-      const statement = new Statement([new Transaction()]);
-
-      const result = statement.format();
-
-      expect(result).toEqual(
+      const statement = new Statement(mockTransactions);
+      const expectedStatement = 
         'date || credit || debit || balance\n' +
-        '10/01/2023 || 1000.00 || || 1000.00\n'
-      );
-      console.log(result);
+        '10/01/2023 || || 500.00 || 500.00\n' +
+        '10/01/2023 || 1000.00 || || 1000.00';
+        
+      expect(statement.format()).toEqual(expectedStatement);
     });
   });
 });

@@ -30,16 +30,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -100,7 +100,9 @@
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -108,31 +110,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -143,28 +147,30 @@
   }
 &nbsp;
   format() {
-    let formattedStatement = 'date || credit || debit || balance\n';
-    for (let transaction of this.transactions.reverse()) {
-      formattedStatement += this.formatTransaction(transaction);
-    }
-    return formattedStatement;
+    const header = 'date || credit || debit || balance\n';
+    const formattedTransactions = this.transactions
+      .slice()
+      .reverse()
+      .map(transaction =&gt; this.formatTransaction(transaction))
+      .join('\n');
+    return header + formattedTransactions;
   }
 &nbsp;
   formatTransaction(transaction) {
-    let formattedDate = this.formatDate(transaction.datetime);
-    let formattedAmount = this.formatAmount(transaction.amount);
-    let formattedBalance = this.formatAmount(transaction.balance);
+    const formattedDate = this.formatDate(transaction.datetime);
+    const formattedAmount = this.formatAmount(transaction.amount);
+    const formattedBalance = this.formatAmount(transaction.balance);
 &nbsp;
     return transaction.type === 'credit'
-      ? `${formattedDate} || ${formattedAmount} || || ${formattedBalance}\n`
-      : <span class="branch-1 cbranch-no" title="branch not covered" >`${formattedDate} || || ${formattedAmount} || ${formattedBalance}\n`;</span>
+      ? `${formattedDate} || ${formattedAmount} || || ${formattedBalance}`
+      : `${formattedDate} || || ${formattedAmount} || ${formattedBalance}`;
   }
 &nbsp;
   formatDate(datetime) {
     const date = new Date(datetime);
-    let day = String(date.getDate()).padStart(2, '0');
-    let month = String(date.getMonth() + 1).padStart(2, '0');
-    let year = date.getFullYear();
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
     return `${day}/${month}/${year}`;
   }
 &nbsp;
@@ -181,7 +187,7 @@ module.exports = Statement;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-23T11:11:31.967Z
+                at 2023-05-23T11:17:58.880Z
             </div>
         <script src="prettify.js"></script>
         <script>

@@ -4,28 +4,30 @@ class Statement {
   }
 
   format() {
-    let formattedStatement = 'date || credit || debit || balance\n';
-    for (let transaction of this.transactions.reverse()) {
-      formattedStatement += this.formatTransaction(transaction);
-    }
-    return formattedStatement;
+    const header = 'date || credit || debit || balance\n';
+    const formattedTransactions = this.transactions
+      .slice()
+      .reverse()
+      .map(transaction => this.formatTransaction(transaction))
+      .join('\n');
+    return header + formattedTransactions;
   }
 
   formatTransaction(transaction) {
-    let formattedDate = this.formatDate(transaction.datetime);
-    let formattedAmount = this.formatAmount(transaction.amount);
-    let formattedBalance = this.formatAmount(transaction.balance);
+    const formattedDate = this.formatDate(transaction.datetime);
+    const formattedAmount = this.formatAmount(transaction.amount);
+    const formattedBalance = this.formatAmount(transaction.balance);
 
     return transaction.type === 'credit'
-      ? `${formattedDate} || ${formattedAmount} || || ${formattedBalance}\n`
-      : `${formattedDate} || || ${formattedAmount} || ${formattedBalance}\n`;
+      ? `${formattedDate} || ${formattedAmount} || || ${formattedBalance}`
+      : `${formattedDate} || || ${formattedAmount} || ${formattedBalance}`;
   }
 
   formatDate(datetime) {
     const date = new Date(datetime);
-    let day = String(date.getDate()).padStart(2, '0');
-    let month = String(date.getMonth() + 1).padStart(2, '0');
-    let year = date.getFullYear();
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
     return `${day}/${month}/${year}`;
   }
 
