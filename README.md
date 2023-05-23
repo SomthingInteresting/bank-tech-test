@@ -152,7 +152,7 @@ The formatting should match the provided criteria. - DONE
 ```
 ## Diagram:
 
-![Bank tech test diagram]()
+![Bank Tech Test Diagram](bank-tech-test-diagram.png)
 
 ## Input -> Output table:
 
@@ -197,7 +197,7 @@ date || credit || debit || balance
 3. All data (transactions) are being kept in memory.
 4. The error cases have been handled, like trying to withdraw more money than the balance or depositing or withdrawing an invalid amount.
 5. Implement the format method to display the statement.
-6. Format the output of the printStatement method to match the provided format.
+6. Format the output of the format method to match the provided format.
 7. Format the timestamp for each transaction to be able to print the date in the statement.
 
 ## Learning resources:
