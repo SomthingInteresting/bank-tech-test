@@ -36,6 +36,9 @@ class BankAccount {
     if (amount <= 0 || typeof amount !== 'number') {
       throw new Error('Invalid amount');
     }
+    if (amount % 1 !== 0 && amount.toString().split('.')[1].length > 2) {
+      throw new Error('Invalid amount: more than 2 decimal places');
+    }
   }
 }
 

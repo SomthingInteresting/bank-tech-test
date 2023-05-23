@@ -33,6 +33,12 @@ describe('BankAccount', () => {
       expect(bankAccount.transactions.length).toEqual(1);
       expect(bankAccount.transactions[0]).toBe(mockTransaction);
     });
+
+    test('throws an error if a deposit has more than two decimal places', () => {
+      const account = new BankAccount();
+      const invalidDepositAmount = 1000.123;
+      expect(() => account.deposit(invalidDepositAmount)).toThrow('Invalid amount: more than 2 decimal places');
+    });
   });
 
   describe('withdraw', () => {
