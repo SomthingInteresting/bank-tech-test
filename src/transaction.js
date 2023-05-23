@@ -3,7 +3,7 @@ class Transaction {
     this.datetime = this.getCurrentDateTime();
     this.amount = this.validateAmount(amount);
     this.type = this.validateType(type);
-    this.balance = balance;
+    this.balance = this.validateBalance(balance);
   }
 
   getCurrentDateTime() {
@@ -22,6 +22,13 @@ class Transaction {
       throw new Error('Type must be either "credit" or "debit".');
     }
     return type;
+  }
+
+  validateBalance(balance) {
+    if (typeof balance !== 'number') {
+      throw new Error('Balance must be a number.');
+    }
+    return balance;
   }
 }
 

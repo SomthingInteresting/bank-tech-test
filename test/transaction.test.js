@@ -24,4 +24,10 @@ describe('Transaction', () => {
     expect(() => new Transaction(1000, 'credit', 1000)).not.toThrow();
     expect(() => new Transaction(1000, 'debit', 1000)).not.toThrow();
   });
+
+  test('should throw an error if balance is not a number', () => {
+    expect(() => new Transaction(1000, 'credit', '1000')).toThrow('Balance must be a number.');
+    expect(() => new Transaction(1000, 'credit', null)).toThrow('Balance must be a number.');
+    expect(() => new Transaction(1000, 'credit', 1000)).not.toThrow();
+  });
 });
