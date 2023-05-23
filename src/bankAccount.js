@@ -28,6 +28,9 @@ class BankAccount {
     }
 
     this.balance -= withdrawalAmount;
+
+    const transaction = new Transaction(withdrawalAmount, 'debit', this.balance);
+    this.transactions.push(transaction);
   }
 }
 

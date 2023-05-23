@@ -67,6 +67,19 @@ describe('BankAccount', () => {
       account.deposit(depositAmount);
       expect(() => account.withdraw(1500)).toThrow('Withdrawal amount exceeds the balance');
     });
+
+    test('should add a new transaction to transactions array when withdrawing', () => {
+      const bankAccount = new BankAccount();
+      const mockTransaction = new Transaction();
+      Transaction.mockReturnValue(mockTransaction);
+      
+      bankAccount.deposit(1000); 
+
+      bankAccount.withdraw(500);
+
+      expect(bankAccount.transactions.length).toEqual(2);
+      expect(bankAccount.transactions[1]).toBe(mockTransaction);
+    });
   });
 
   describe('transactions', () => {
