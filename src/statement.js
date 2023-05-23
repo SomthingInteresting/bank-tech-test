@@ -4,14 +4,15 @@ class Statement {
   }
 
   format() {
-    const header = 'date || credit || debit || balance\n';
+    const header = 'date || credit || debit || balance';
     const formattedTransactions = this.transactions
       .slice()
       .reverse()
       .map(transaction => this.formatTransaction(transaction))
       .join('\n');
-    return header + formattedTransactions;
-  }
+      
+    return formattedTransactions ? `${header}\n${formattedTransactions}` : header;
+  }  
 
   formatTransaction(transaction) {
     const formattedDate = this.formatDate(transaction.datetime);
