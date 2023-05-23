@@ -21,6 +21,10 @@
 - Create a statement with `const statement = new Statement(account.transactions);`
 - Print your statement with `console.log(statement.format());`
 
+### Screenshot of app in use:
+
+![Bank Tech Test Screenshot](bank-tech-test-running.png)
+
 ### To run the tests:
 
 - Run `npm test` to run the tests
