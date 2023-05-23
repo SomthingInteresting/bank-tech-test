@@ -17,12 +17,15 @@ class BankAccount {
     this.performTransaction(amount, 'debit');
   }
 
+  createTransaction(amount, type) {
+    const transaction = new Transaction(amount, type, this.balance);
+    this.transactions.push(transaction);
+  }  
+
   performTransaction(amount, type) {
     this.#checkInvalidAmount(amount);
     this.balance += (type === 'credit') ? amount : -amount;
-
-    const transaction = new Transaction(amount, type, this.balance);
-    this.transactions.push(transaction);
+    this.createTransaction(amount, type);
   }
 
   #checkInvalidAmount(amount) {
