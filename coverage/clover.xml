@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1684833144867" clover="3.2.0">
-  <project timestamp="1684833144867" name="All files">
-    <metrics statements="20" coveredstatements="20" conditionals="10" coveredconditionals="10" methods="6" coveredmethods="6" elements="36" coveredelements="36" complexity="0" loc="20" ncloc="20" packages="1" files="2" classes="2"/>
+<coverage generated="1684833620870" clover="3.2.0">
+  <project timestamp="1684833620870" name="All files">
+    <metrics statements="23" coveredstatements="23" conditionals="14" coveredconditionals="14" methods="7" coveredmethods="7" elements="44" coveredelements="44" complexity="0" loc="23" ncloc="23" packages="1" files="2" classes="2"/>
     <file name="bankAccount.js" path="/Users/quddusrahman/Documents/Projects/bank-tech-test/src/bankAccount.js">
       <metrics statements="11" coveredstatements="11" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
       <line num="3" count="8" type="stmt"/>
@@ -17,16 +17,19 @@
       <line num="29" count="1" type="stmt"/>
     </file>
     <file name="transaction.js" path="/Users/quddusrahman/Documents/Projects/bank-tech-test/src/transaction.js">
-      <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
-      <line num="3" count="4" type="stmt"/>
-      <line num="4" count="4" type="stmt"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="10" count="4" type="stmt"/>
-      <line num="14" count="4" type="cond" truecount="4" falsecount="0"/>
+      <metrics statements="12" coveredstatements="12" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
+      <line num="3" count="7" type="stmt"/>
+      <line num="4" count="7" type="stmt"/>
+      <line num="5" count="4" type="stmt"/>
+      <line num="6" count="2" type="stmt"/>
+      <line num="10" count="7" type="stmt"/>
+      <line num="14" count="7" type="cond" truecount="4" falsecount="0"/>
       <line num="15" count="3" type="stmt"/>
-      <line num="17" count="1" type="stmt"/>
-      <line num="21" count="1" type="stmt"/>
+      <line num="17" count="4" type="stmt"/>
+      <line num="21" count="4" type="cond" truecount="4" falsecount="0"/>
+      <line num="22" count="2" type="stmt"/>
+      <line num="24" count="2" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

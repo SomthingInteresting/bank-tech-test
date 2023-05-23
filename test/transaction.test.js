@@ -16,4 +16,10 @@ describe('Transaction', () => {
     expect(() => new Transaction('1000', 'credit', 1000)).toThrow('Amount must be a positive number.');
     expect(() => new Transaction(0, 'credit', 1000)).toThrow('Amount must be a positive number.');
   });
+
+  test('should throw an error if type is not a non-empty string', () => {
+    expect(() => new Transaction(1000, '', 1000)).toThrow('Type must be a non-empty string.');
+    expect(() => new Transaction(1000, 123, 1000)).toThrow('Type must be a non-empty string.');
+    expect(() => new Transaction(1000, 'credit', 1000)).not.toThrow();
+  });
 });

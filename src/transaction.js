@@ -2,7 +2,7 @@ class Transaction {
   constructor(amount, type, balance) {
     this.datetime = this.getCurrentDateTime();
     this.amount = this.validateAmount(amount);
-    this.type = type;
+    this.type = this.validateType(type);
     this.balance = balance;
   }
 
@@ -15,6 +15,13 @@ class Transaction {
       throw new Error('Amount must be a positive number.');
     }
     return amount;
+  }
+
+  validateType(type) {
+    if (typeof type !== 'string' || type.trim() === '') {
+      throw new Error('Type must be a non-empty string.');
+    }
+    return type.trim();
   }
 }
 
