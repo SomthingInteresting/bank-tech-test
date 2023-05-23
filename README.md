@@ -36,10 +36,10 @@ All files       |     100 |      100 |     100 |     100 |
  transaction.js |     100 |      100 |     100 |     100 |                   
 ----------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 3 passed, 3 total
-Tests:       21 passed, 21 total
+Test Suites: 4 passed, 4 total
+Tests:       26 passed, 26 total
 Snapshots:   0 total
-Time:        0.322 s, estimated 1 s
+Time:        0.294 s, estimated 1 s
 
 ## Test screenshots
 
