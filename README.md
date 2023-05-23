@@ -119,16 +119,16 @@ The problem:
 Create a simple banking application that allows deposits, withdrawals, and prints account statements. The transactions are stored in memory and can be displayed in reverse chronological order.
 
 Deposits:
-Should accept a valid deposit amount (integer or float up to 2 decimal places).
-Should update the balance with the deposit amount.
-Should reject invalid deposit amounts (negative, non-numeric).
-Should store the transaction with a timestamp.
+Should accept a valid deposit amount (integer or float up to 2 decimal places). - DONE
+Should update the balance with the deposit amount. - DONE
+Should reject invalid deposit amounts (negative, non-numeric). - DONE
+Should store the transaction with a timestamp. - DONE
 
 Withdrawals:
-Should accept a valid withdrawal amount (integer or float up to 2 decimal places).
-Should update the balance by deducting the withdrawal amount.
-Should reject invalid withdrawal amounts (negative, non-numeric, larger than balance).
-Should store the transaction with a timestamp.
+Should accept a valid withdrawal amount (integer or float up to 2 decimal places). - DONE
+Should update the balance by deducting the withdrawal amount. - DONE
+Should reject invalid withdrawal amounts (negative, non-numeric, larger than balance). - DONE
+Should store the transaction with a timestamp. - DONE
 
 Account statement:
 Should print all transactions in reverse chronological order.
@@ -164,7 +164,7 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 ```
 
-TDD red, green, refactor, commit cycle rules:
+TDD Red, Green, Commit, Refactor, cycle rules:
 
 - Create a feature test to test the user stories. (Normal)
 - Use mocks to isolate unit tests. (Normal)
@@ -174,6 +174,19 @@ TDD red, green, refactor, commit cycle rules:
 - Use appropriate testing framework methods to keep code clean (Additional)
 - Create unit tests for each class and method.
 - Use SRP to keep classes and methods small and testable.
+
+Completed so far:
+
+1. The BankAccount class is interactable via a REPL like Node.
+2. Deposit and withdrawal methods are implemented with necessary validations.
+3. All data (transactions) are being kept in memory.
+4. The error cases have been handled, like trying to withdraw more money than the balance or depositing or withdrawing an invalid amount.
+
+To do:
+
+1. Implement the printStatement method to display the statement.
+2. Format the output of the printStatement method to match the provided format.
+3. Format the timestamp for each transaction to be able to print the date in the statement.
 
 Learning resources:
 
