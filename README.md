@@ -27,23 +27,18 @@
 
 ## Test coverage report
 
-----------------|---------|----------|---------|---------|-------------------
+
 File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------|---------|----------|---------|---------|-------------------
 All files       |     100 |      100 |     100 |     100 |                   
  bankAccount.js |     100 |      100 |     100 |     100 |                   
  statement.js   |     100 |      100 |     100 |     100 |                   
  transaction.js |     100 |      100 |     100 |     100 |                   
-----------------|---------|----------|---------|---------|-------------------
 
 Test Suites: 4 passed, 4 total
 Tests:       26 passed, 26 total
 Snapshots:   0 total
 Time:        0.294 s, estimated 1 s
-
-## Test screenshots
-
-INSERT HERE
 
 ## Specification
 
