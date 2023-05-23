@@ -18,10 +18,10 @@ class Transaction {
   }
 
   validateType(type) {
-    if (typeof type !== 'string' || type.trim() === '') {
-      throw new Error('Type must be a non-empty string.');
+    if (typeof type !== 'string' || !['credit', 'debit'].includes(type)) {
+      throw new Error('Type must be either "credit" or "debit".');
     }
-    return type.trim();
+    return type;
   }
 }
 
