@@ -1,4 +1,3 @@
-// Constants
 const HEADER = 'date || credit || debit || balance';
 
 class Statement {
