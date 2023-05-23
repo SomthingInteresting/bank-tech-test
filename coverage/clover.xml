@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1684773842228" clover="3.2.0">
-  <project timestamp="1684773842228" name="All files">
-    <metrics statements="11" coveredstatements="11" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3" elements="20" coveredelements="20" complexity="0" loc="11" ncloc="11" packages="1" files="1" classes="1"/>
+<coverage generated="1684828837323" clover="3.2.0">
+  <project timestamp="1684828837323" name="All files">
+    <metrics statements="16" coveredstatements="16" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4" elements="26" coveredelements="26" complexity="0" loc="16" ncloc="16" packages="1" files="2" classes="2"/>
     <file name="bankAccount.js" path="/Users/quddusrahman/Documents/Projects/bank-tech-test/src/bankAccount.js">
       <metrics statements="11" coveredstatements="11" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
       <line num="3" count="8" type="stmt"/>
@@ -15,6 +15,14 @@
       <line num="22" count="1" type="stmt"/>
       <line num="25" count="1" type="stmt"/>
       <line num="29" count="1" type="stmt"/>
+    </file>
+    <file name="transaction.js" path="/Users/quddusrahman/Documents/Projects/bank-tech-test/src/transaction.js">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
